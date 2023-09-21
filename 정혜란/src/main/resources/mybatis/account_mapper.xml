@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+		"-//mybatis.org//DTD Mapper 3.0//EN" 
+		"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	
+<mapper namespace="com.itbank.repository.AccountDAO">
+	<insert id="insert" parameterType="account">
+		insert into account (
+			userid,
+			userpw,
+			salt,
+			username
+		) values(
+			#{userid},
+			#{userpw},
+			#{salt},
+			#{username}
+		)
+		
+	</insert>
+	
+	<select id="selsecOneByID" parameterType="String" resultType="account">
+		select * from account where userid=#{userid}
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
